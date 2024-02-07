@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box;
+}
+
+/* *Removing the default styling */
+.btn {
+  background-color: #e6e6e6;
+  border: 1px solid #b3b3b3;
+  outline: none;
+  cursor: pointer;
+  /* *We are using ems here, because we want the button spacing to scale with the font size  */
+  padding: 0.5em 1em;
+  border-radius: 0.3em;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: #ddd;
+  /* * The first 0 0 means x and y offset (we don't want to offset the shadow)  */
+  /* * 5px (blur)  0 (spread) means how spread out and how much blur out the shadow should be  */
+  /* * We are using the same color as the border color */
+  box-shadow: 0 0 5px 0 #b3b3b3;
+}
+
+/* * It is a good practise to mention the btn class first and then specify the btn-primary */
+/* * Because even if the btn-primary is defined before the default button selector  */
+/* * It will have all the properties of .btn class as we specifying two classes like btn.btn-primary  */
+
+.btn.btn-primary {
+  background-color: #6132cf;
+  color: #fff;
+  border-color: #2e2a77;
+}
+
+.btn.btn-primary:hover,
+.btn.btn-primary:focus {
+  background-color: #4632b3;
+  box-shadow: 0 0 5px 0 #b3b3b3;
+}
+
+.btn.btn-accent {
+  background-color: #0088cc;
+  color: #fff;
+  border-color: #004466;
+}
+
+.btn.btn-accent:hover,
+.btn.btn-accent:focus {
+  background-color: ;
+  box-shadow: 0 0 5px 0 #b3b3b3;
+}

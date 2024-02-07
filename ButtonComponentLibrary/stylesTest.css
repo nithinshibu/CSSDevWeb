@@ -1,0 +1,42 @@
+* {
+  box-sizing: border-box;
+}
+
+.btn {
+  border-radius: 1px;
+  border: 0.5px solid #444;
+}
+
+.btn-primary {
+  background: #c132cf;
+  color: #fff;
+}
+
+.btn-accent {
+  background: #328dcf;
+  color: #fff;
+}
+
+.btn-danger {
+  background: #db2a1a;
+  color: #fff;
+}
+
+.btn-large {
+  padding: 5px;
+}
+
+.btn-small {
+  width: 30px;
+  height: 20px;
+  font-size: 7px;
+}
+
+.btn-pill {
+  border-radius: 10px;
+}
+
+.btn-custom {
+  background: linear-gradient(45deg, #c132cf, #328dcf);
+  border: 1px solid black;
+}

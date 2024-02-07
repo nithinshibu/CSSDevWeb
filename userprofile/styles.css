@@ -1,0 +1,20 @@
+.heading {
+  text-align: center;
+}
+
+.sub-heading {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.green-section {
+  background-color: #008000;
+  color: #fff;
+}
+
+.highlight {
+  color: #00ffff;
+}
+
+.strike-out {
+  text-decoration: line-through;
+}

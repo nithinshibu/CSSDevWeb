@@ -1,0 +1,50 @@
+* {
+  box-sizing: border-box;
+}
+
+.input {
+  background: #fff;
+  border: 1px solid #b3b3b3;
+  padding: 0.5em 1em;
+  margin: 0.25em;
+  outline: none;
+  border-radius: 0.3rem;
+}
+
+.input:hover,
+.input:focus {
+  border-color: #1a7edb;
+  box-shadow: 0 0 5px 0 #5199db;
+}
+
+.input.input-success {
+  border-color: #069414;
+}
+
+.input.input-success:hover,
+.input.input-success:focus {
+  box-shadow: 0 0 5px 0 #04c918;
+}
+
+.input.input-error {
+  border-color: #c41a1a;
+}
+
+.input.input-error:hover,
+.input.input-error:focus {
+  box-shadow: 0 0 5px 0 #e01212;
+}
+
+.input.input-large {
+  font-size: 1em;
+}
+
+.input.input-small {
+  font-size: 0.65em;
+}
+
+.input:disabled {
+  background-color: #ddd;
+  border-color: #b3b3b3;
+  box-shadow: none;
+}

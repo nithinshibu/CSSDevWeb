@@ -35,7 +35,7 @@
 .btn.btn-primary:hover,
 .btn.btn-primary:focus {
   background-color: #4632b3;
-  box-shadow: 0 0 5px 0 #b3b3b3;
+  box-shadow: 0 0 5px 0 #2e2a77;
 }
 
 .btn.btn-accent {
@@ -46,6 +46,6 @@
 
 .btn.btn-accent:hover,
 .btn.btn-accent:focus {
-  background-color: ;
-  box-shadow: 0 0 5px 0 #b3b3b3;
+  background-color: #006699;
+  box-shadow: 0 0 5px 0 #004466;
 }

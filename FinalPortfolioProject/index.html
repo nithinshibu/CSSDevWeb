@@ -7,13 +7,13 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header>
-      <h1>Kyle Cook</h1>
+    <header class="header">
+      <h1 class="header-title">Kyle Cook</h1>
     </header>
     <main>
-      <section>
+      <section class="section">
         <h2>About Me</h2>
-        <p>
+        <p class="section-content">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis
           mollitia tempore fuga odio laboriosam sed reprehenderit commodi
           cupiditate atque voluptate placeat rem distinctio neque omnis
@@ -27,9 +27,9 @@
           vitae! Perferendis laborum unde ex. Nihil ipsum ea autem sit nemo?
         </p>
       </section>
-      <section>
+      <section class="section section-accent">
         <h2>Skills</h2>
-        <ul>
+        <ul class="section-content skills-section">
           <li>Javascipt</li>
           <li>CSS</li>
           <li>HTML</li>
@@ -37,10 +37,10 @@
           <li>Ruby</li>
         </ul>
       </section>
-      <section>
+      <section class="section">
         <h2>Projects</h2>
-        <ul>
-          <li>
+        <ul class="section-content project-section">
+          <li class="project-list-item">
             <img src="https://source.unsplash.com/xfngap_DToE/150x150" alt="" />
             <div>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
@@ -48,7 +48,7 @@
               reprehenderit maiores?
             </div>
           </li>
-          <li>
+          <li class="project-list-item">
             <img src="https://source.unsplash.com/HeEJU3nrg_0/150x150" alt="" />
             <div>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
@@ -58,24 +58,27 @@
           </li>
         </ul>
       </section>
-      <section>
+      <section class="section">
         <h2>Contact Me</h2>
-        <form>
+        <form class="section-content contact-section">
           <div>
             <label>Name</label>
           </div>
-          <input type="text" />
+          <input type="text" class="input" />
           <div>
             <label>Email</label>
           </div>
-          <input type="email" />
+          <input type="email" class="input" />
           <div>
             <label>Message</label>
           </div>
-          <textarea></textarea>
+          <textarea class="input input-no-resize"></textarea>
+          <div>
+            <button class="btn" type="submit">Send</button>
+          </div>
         </form>
       </section>
     </main>
-    <footer>Kyle Cook</footer>
+    <footer class="footer">Kyle Cook</footer>
   </body>
 </html>

@@ -5,10 +5,14 @@
 .input {
   background: #fff;
   border: 1px solid #b3b3b3;
+  /* * using em because we want the padding to scale with the input font */
   padding: 0.5em 1em;
-  margin: 0.25em;
+  margin: 0.25rem;
   outline: none;
-  border-radius: 0.3rem;
+  /*  * using em because we want the border to scale with the font size */
+  border-radius: 0.3em;
+  /* * Inherit the font size of the page */
+  font-size: inherit;
 }
 
 .input:hover,
@@ -36,11 +40,11 @@
 }
 
 .input.input-large {
-  font-size: 1em;
+  font-size: 1.2rem;
 }
 
 .input.input-small {
-  font-size: 0.65em;
+  font-size: 0.65rem;
 }
 
 .input:disabled {

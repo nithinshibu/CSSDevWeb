@@ -1,0 +1,137 @@
+* {
+  box-sizing: border-box;
+}
+
+/* *Center the modal */
+
+body {
+  /* * This three will center the  modal horizontally*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* * But we also want to center the modal vertically */
+  /* * But there is a problem , the container is not 100% of the size of the screen */
+  height: 100vh;
+  /* * By adding the height to 100vh , it is vertically centered */
+  /* * Now the container is 100% height ,so the element inside the container will come in the center vertically  */
+  /* ------------------------- */
+  /* * Currently the scroll bar is on the modal as well the body, to remove the scroll bar from the body , remove the margin from body  */
+  /* * So now the scroll bar will be present only on the modal */
+  margin: 0;
+  background-color: #555;
+}
+
+.modal {
+  /* * In this project, the model only takes up a certain percentage of height */
+  /* * It is going to take 80% of the entire screen size*/
+  height: 80vh;
+  /* * But by applying the height only , while inspecting we can see that no change happened */
+  /* * This is because all of the content is overflowing the modal */
+  /* * So we can either set the overflow to hidden or auto */
+  /* ? overflow: auto;  --added the same in .content below*/
+  /* * Adding overflow to auto , will add a scroll bar , if the content becomes too large */
+  /* * We will change this later becuase we only want to to have the scroll on the content and not on the entire modal  */
+  /* ------------------------- */
+  /* *Now the content will be wide enough , there wil be a horizontal scroll comes in */
+  width: 900px;
+  /* * We are adding this max-width because if the model is too large , it will only 80% of the screen size*/
+  /* * So even if we increase the screen size, the model will be only 900px wide and it will not take the 80% of the screen size   */
+  max-width: 80%;
+  background-color: #fff;
+  border-radius: 8px;
+  /* ------------------------- */
+  /* * Applying flex only will by default make the flex-direction row (horizontal) */
+  display: flex;
+  /* * By adding the flex-direction to column , the content will be vertical */
+  flex-direction: column;
+  /* * And the reason for using flex box in the modal , so that we can make the center body (content) take up the remaining space  */
+  /* * We can make it grow to the full height of the modal , instead of making the title or the footer take up the entire height */
+}
+
+.header {
+  /* * We are using flex here , so we can space out the title and close button  */
+  display: flex;
+  /* * So by adding the space-between the title is now in the left side and the close button goes to the top-right corner */
+  justify-content: space-between;
+  /* * Adding 0 on top and bottom and 1 rem on right and left */
+  padding: 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #777;
+}
+
+.title {
+  font-size: 1.5rem;
+  padding-top: 1rem;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  /* * But now we can see that it is little stereched , so use align-self */
+  align-self: flex-start;
+  padding-top: 0.5rem;
+}
+
+/* *Next we are going to work on the main content inside the modal */
+/* *Here we will be able to see how to use the overfow properly and also why we made the .modal as flex-direction:column  */
+
+.content {
+  /* * Flex grow is set to 1 so that section always grows to the full size of the modal container */
+  /* * The main  purpose of adding the flex-grow to 1 is because , if  in the htmk, even when the content is of a single line, we can see that the middle section (content) will grow to the full height */
+  /* * If we didn't had flex grow then the footer will be squished up to the content , so to avoid that and to make the content take up the height all the time , add flex grow */
+  flex-grow: 1;
+  /* * Set the overflow to auto here and remove it from .modal which we added previously */
+  overflow: auto;
+  /* * So here the main difference is that when I added the overflow:auto on the modal , the scroll bar was starting from the title itself instead of starting from the content. */
+  /* * So after removing the overflow from the .modal and add it in the .content , the scroll bar will not cover the title and the footer */
+  /* ------------------------- */
+  padding: 1rem;
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.5rem;
+  border-top: 1px solid #777;
+}
+
+.footer .btn {
+  margin-right: 0.5rem;
+}
+
+/* * But now the last button(cancel) has an additional 0.5rem margin applied, we need to remove it */
+
+.footer .btn:last-child {
+  /* * So we remove the additional 0.5 rem */
+  margin-right: initial;
+}
+
+.btn {
+  /* * Addding "em" to padding as it will scale automatically based on the font size */
+  padding: 0.5em 1em;
+  font-size: inherit;
+  border-radius: 0.3em;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.btn.btn-primary {
+  background-color: #1ca;
+}
+.btn.btn-primary:hover,
+.btn.btn-primary:focus {
+  background-color: #0a8;
+}
+.btn.btn-danger {
+  background-color: #df2e38;
+}
+.btn.btn-danger:hover,
+.btn.btn-danger:focus {
+  background-color: #b31312;
+}

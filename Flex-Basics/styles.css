@@ -1,0 +1,51 @@
+.container {
+  /* display: flex; */
+  /* * Inline flex will behave like inline element for its container and all its children behave like a flex element  */
+  /* * Flex will act like a block element to the container and inline-flex will act like inline property  */
+  display: inline-flex;
+  background-color: #ccc;
+  border: 1px solid #000;
+  justify-content: space-evenly;
+  /*  * The default align-item is stretch and justify-content is flex-start */
+  /*  * We are using min-height here and in this case all the items will stretch to the largest height of these items in this case it is item-2 (150px) */
+  /* * Align items is used to space the items inside the container */
+  align-items: stretch;
+  /* * Space-between,space-around is not used with align items */
+  /*  *---Flex Wrap--- */
+  /* * If the browser shrinks, the elements will be wrapped to another line */
+  flex-wrap: wrap;
+  /* * To space te boxes from one another we can use the align content property  */
+  align-content: center;
+}
+
+.item {
+  border: 1px solid black;
+  background-color: #777;
+  width: 75px;
+  color: yellow;
+  margin: 10px;
+}
+
+.item-1 {
+  /*  * flex: 1 0 0;  this means flex: <grow> <shrink> <basis> */
+  min-height: 50px;
+  /* * By default all the items inside the container will shrink down on reducing the screen size, because it is set to flex-shrink:1 */
+  flex-shrink: 1;
+  /* * But if we dont want the elements to shrink then we can use flex-shrink:0 */
+  /* * align self can be used to change the alignment of individual items  */
+  align-self: flex-start;
+  /* * We can reorder items using the order property */
+  /* * Use order property only if necessary */
+  order: 3;
+}
+.item-2 {
+  /* height: 100px; */
+  min-height: 100px;
+  order: 1;
+}
+.item-3 {
+  min-height: 150px;
+  /* * If we want the 3rd box to take up all the remaining spaces, we can use flex-grow  */
+  flex-grow: 1;
+  order: 2;
+}

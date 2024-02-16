@@ -120,12 +120,18 @@
   /* * We can also use justofy-content with grid as well */
   /* justify-content: center; */
   /* * In grid we have to use start and end and in flex we use flex-start and flex-end */
-  justify-content: center;
+  /* justify-content: center; */
   /* * Align content will allow us to align the entire content not  the items inside but the whole content will be aligned */
   /* * So if we add height to the container , we can see that the items are at the center of the 500px*/
-  height: 500px;
+  /* height: 500px;
   background-color: #aaa;
-  align-content: center;
+  align-content: center; */
+  /* ------------------------- */
+  /* ------------Align Items------------- */
+  justify-content: start;
+  /* * When we added align-items we can see that the items are shrinking up at the very top of the cell and they are no longer strectching to fill the entirity of the cell  */
+  /* * Because by default the align items are set to strectch */
+  align-items: start;
 }
 
 /* * Also remember not to put the area name not in quotes, if  we put it inside quotes it wouldn't work */

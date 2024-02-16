@@ -1,0 +1,21 @@
+/* * The first thing to do with a project on using Grid is to */
+/* * Visualise the rows and columns we need to use in the final product */
+
+/* * In this project , we have a row for the title , row  for the navbar , row which contains the main content for the article, row for the footer */
+/* * Left side column which contains the navbar and the content. Also, another column for the right side content  */
+
+.grid-container {
+  display: grid;
+  /* ------------------------- */
+  /* ? -----------COLUMNS-------------- */
+  /* * We know that in our project we will be having two columns  */
+  /* * The first column is going to take as much as space  it needs to so we are adding 1fr to it so it will expand to all the remaining spaces and fill all the width possible, and for the final column we have given 150px becuase it is the sidebar on the right and it's going to have a  set size of 150px  */
+  /* * So the left side column will scale but the right side column is set to 150px width */
+  grid-template-columns: 1fr 150px;
+  /* ? -----------ROWS-------------- */
+  /* * Most of the rows are going to be autosized */
+  /* * Title row is auto  so it is going to be as large as it needs to , for the navbar also same so set that as well to auto*/
+  /* *For the content , we want it to scale and we can see some whitespace after the content ends , that is because the content is  scaling to fill all the remaining height it needs to   */
+  /* * In case of footer, it is going to be auto so it can be as large as it needs to */
+  grid-template-rows: auto auto 1fr auto;
+}

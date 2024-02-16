@@ -105,7 +105,7 @@
   /* grid-template-columns: 50px repeat(2, 100px) 50px; */
   /* grid-template-columns: 50px repeat(2, 1fr) 50px; */
   /* * So once we add some content into item-1 we could see that the content is overflowing, so to make it not overflow we need to specify minmax() */
-  grid-template-columns: 150px repeat(2, 100px) 50px;
+  /* grid-template-columns: 150px repeat(2, 100px) 50px; */
   /* * as we have specified Auto ,auto sizing tells that be as large it needs to be to fit all of the text inside of it but not any more larger than that. */
   /* * So this row will be 50px wide and it will take the height necessary to fit the content */
   grid-template-rows: minmax(50px, auto) 100px;
@@ -128,10 +128,18 @@
   align-content: center; */
   /* ------------------------- */
   /* ------------Align Items------------- */
-  justify-content: start;
+  /* justify-content: start; */
   /* * When we added align-items we can see that the items are shrinking up at the very top of the cell and they are no longer strectching to fill the entirity of the cell  */
   /* * Because by default the align items are set to strectch */
-  align-items: start;
+  /* align-items: start; */
+  /* ------------------------- */
+  /* ------------------------- */
+  /*  * In this case we can see that the item-1 has a gap and item-2 is in second row becuase item-2 cannot fill that gap becuase of its larger size */
+  /* grid-auto-flow: row; */
+  grid-template-columns: repeat(3, 100px);
+  /* * But if we add grid-auto-flow: row dense; it will fit items which can be fitted into the gap, so item-3 (small enough to fit into the gap) is of size which can be fit into the item-1 space left, so it will be occupied over there */
+  /*  * but without dense the gaps will be left behind and we always will have the gap and we wouldn't able to fill the missing gaps  */
+  grid-auto-flow: row dense;
 }
 
 /* * Also remember not to put the area name not in quotes, if  we put it inside quotes it wouldn't work */
@@ -162,11 +170,16 @@
   /* * If we want the item-1 to span 2 rows as well as span the entire columns of row 1 then we can use:- */
   /* grid-column: 1 / -1;
   grid-row: span 2; */
+  /* ------------------------- */
+  /* ------------------------- */
+  grid-column: span 2;
 }
 
 .item-2 {
   /* * Now we can see that the item-2 is occupying both the columns (header and header ) and item-2 is taking row1 and (col-1 and col-2)*/
   /* grid-area: header; */
+
+  grid-column: span 2;
 }
 
 .item-6 {

@@ -101,9 +101,31 @@
   /*  * We can specify grid-template-columns: repeat(4, 100px); which also works fine */
   /* ------------------------- */
   /* ------------------------- */
-  /* *So in thi below example , the first column will take 50px , 2nd and 3rd takes 100px and 4th column takes 50px */
+  /* *So in this below example , the first column will take 50px , 2nd and 3rd takes 100px and 4th column takes 50px */
   /* grid-template-columns: 50px repeat(2, 100px) 50px; */
   /* grid-template-columns: 50px repeat(2, 1fr) 50px; */
+  /* * So once we add some content into item-1 we could see that the content is overflowing, so to make it not overflow we need to specify minmax() */
+  grid-template-columns: 150px repeat(2, 100px) 50px;
+  /* * as we have specified Auto ,auto sizing tells that be as large it needs to be to fit all of the text inside of it but not any more larger than that. */
+  /* * So this row will be 50px wide and it will take the height necessary to fit the content */
+  grid-template-rows: minmax(50px, auto) 100px;
+  /* ------------------------- */
+  /* ------------------------- */
+  /* * Also with grid we can use gap which we can't use with flexbox  */
+  /*  * In grid we can use gap in between rows and columns */
+  /* row-gap: 10px;
+  column-gap: 20px; */
+  /* * And if we want the same gap between the rows and columns */
+  gap: 15px;
+  /* * We can also use justofy-content with grid as well */
+  /* justify-content: center; */
+  /* * In grid we have to use start and end and in flex we use flex-start and flex-end */
+  justify-content: center;
+  /* * Align content will allow us to align the entire content not  the items inside but the whole content will be aligned */
+  /* * So if we add height to the container , we can see that the items are at the center of the 500px*/
+  height: 500px;
+  background-color: #aaa;
+  align-content: center;
 }
 
 /* * Also remember not to put the area name not in quotes, if  we put it inside quotes it wouldn't work */

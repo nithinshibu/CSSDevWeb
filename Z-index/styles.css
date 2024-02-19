@@ -1,0 +1,52 @@
+body {
+  height: 200vh;
+}
+
+.parent {
+  padding: 0.25rem;
+  background-color: #87cefa;
+  position: relative;
+  /* *-------------- */
+  /* *If we set the z-index of parent as -2 and .child1 as -1 */
+  /* z-index: -2; */
+  /* *-------------- */
+  /* *-------------- */
+  /* * Stacking context */
+  z-index: 10;
+}
+
+.parent2 {
+  margin-top: 10px;
+  z-index: 2;
+  top: -35px;
+}
+
+.child1 {
+  position: sticky;
+  /* * Z-index takes a number and larger number which display it on top of other elements and smaller number will display it behind other elements */
+  /* * 0 is the default value for Z-index */
+  /* * If we add the z-index as -1, then the child will be shown behind the parent container(element). */
+  /* z-index: -1; */
+  /* z-index: 100; */
+  /* *-------------- */
+  /* *-------------- */
+  /* * Here we can see that the z-index is set to -1 so it will be larger than the parent as it's z-index is -2 but the child2 and child3 has a z-index larger than the child1 which is 0, so the child1 will go behind the child2 and child 3  */
+  /* z-index: -1; */
+  /* top: 10px; */
+  /* *-------------- */
+  /* *-------------- */
+  z-index: -1;
+  top: 10px;
+  padding: 0.25rem;
+  background-color: #f08080;
+}
+
+.child2 {
+  padding: 0.25rem;
+  background-color: #90ee90;
+}
+.child3 {
+  padding: 0.25rem;
+  background-color: #cd853f;
+  z-index: 1;
+}

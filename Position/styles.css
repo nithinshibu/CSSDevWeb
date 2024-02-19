@@ -1,9 +1,40 @@
+/* * Every single element by default is of position :static */
+/* * Position static means that follow the normal document flow */
+/* * We can break out it using position */
+
 .parent {
   padding: 0.25rem;
   background-color: #87cefa;
+  position: relative;
 }
 
 .child1 {
+  /* * By adding position:relative no much visible changes will be there */
+  /* * By default position-relative just keeps the element in place inside the document flow */
+  /* * But with position relative we can set 4 properties which are [top,bottom,right,left] */
+  /* position: relative; */
+  /* * Here we can see that the child1 is moved 10px away from left */
+  /* * Also we can see that it is overflowing in the right side of the parent container*/
+  /* left: 10px; */
+  /* * So in this case, it is moved 10px away from the top */
+  /* ---------------- */
+  /* * The main use of using position:relative instead of something like margin-top is that when we move the child1, the child2 and child3 are in their original position, only the child1 will be moved from its original position */
+  /* top: 10px; */
+  /* ---------------- */
+  /* ---------------- */
+  /* ---------------- */
+  /* * When we are using the position as absolute, it is removing that element 100% from the normal document flow */
+  position: absolute;
+  /* * When we add top:10px it will be 10px away from the screen */
+  /* top: 10px; */
+  /* * This will make the child1 to be placed at the bottom (just 10px away from bottom) */
+  /* *This behavior is happened becuase we haven't set any container as parent container (meaning position as relative in parent container) , so this is taking the whole html page as its parent */
+  /* * So in the .parent class add position:relative */
+  /* ---------------- */
+  /* ---------------- */
+  /* *So now the child1 is relative to .parent class, so this child1 will be 10px away from bottom and 10px away from right */
+  bottom: 10px;
+  right: 10px;
   padding: 0.25rem;
   background-color: #f08080;
 }

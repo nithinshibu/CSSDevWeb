@@ -1,0 +1,42 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.grid-container {
+  display: grid;
+  /* * We are using repeat() and we want to autofill instead of specifying a number  */
+  /* * By using the auto-fill property the browser will figure out how many columns we need  */
+  /* * Then we have to specify a minmax() , the minimum value we specified is 200px wide and a maximum value is 1fr. */
+  /* * We are saying that we can make as many 200px columns as we can but if we can't fit any more columns , grow all the columns to fit the entire width of the screen   */
+  grid-template-columns: repeat(auto-fill, minmax(200px, 300px));
+  gap: 10px;
+  /* * To make all the images same height, use align-items:stretch so that it will stretch all the images to the height of the  largest image  */
+  align-items: stretch;
+  /* * But we want all the images to have same height , so all the images will be 200px tall in every row by using grid-auto-rows  */
+  grid-auto-rows: 200px;
+  background-color: #333;
+  padding: 10px;
+  /* *After adding everything we can see some extra spaces in between the images,so to avoid that we can use auto-flow dense */
+  /* * A lot of gaps in the grid will be fixed by adding grid-auto-flow to dense  */
+  grid-auto-flow: dense;
+  /* * But still if there is more gaps, then add justify-items:stretch */
+  justify-items: stretch;
+}
+
+img {
+  /* * This will prevent the image from being larger than 100% of the 200px we have specified inside grid-template-columns */
+  /* * This will make sure that the image doesn't overflow the grid container */
+  max-width: 100%;
+  border: 1px solid #fff;
+}
+
+.wide {
+  /* * Every image with wide class will be 2 columns wide */
+  grid-column: span 2;
+}
+
+.tall {
+  /* * Every image with tall class will be 2 rows tall */
+  grid-row: span 2;
+}

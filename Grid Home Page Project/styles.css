@@ -4,7 +4,15 @@
 /* * In this project , we have a row for the title , row  for the navbar , row which contains the main content for the article, row for the footer */
 /* * Left side column which contains the navbar and the content. Also, another column for the right side content  */
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .grid-container {
+  /* *To push the footer to the bottom of the page add min-height as 100vh */
+  min-height: 100vh;
   display: grid;
   /* ------------------------- */
   /* ? -----------COLUMNS-------------- */
@@ -18,4 +26,60 @@
   /* *For the content , we want it to scale and we can see some whitespace after the content ends , that is because the content is  scaling to fill all the remaining height it needs to   */
   /* * In case of footer, it is going to be auto so it can be as large as it needs to */
   grid-template-rows: auto auto 1fr auto;
+  grid-template-areas:
+    "header header"
+    "nav sidebar"
+    "content sidebar"
+    "footer footer";
 }
+
+.header {
+  grid-area: header;
+  font-size: 1.5rem;
+  background-color: #069;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+
+.nav {
+  grid-area: nav;
+  background-color: #069;
+  color: #fff;
+  border-top: 1px solid #024;
+  padding: 0.5rem;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+.nav-list li {
+  padding: 0.5rem;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background-color: #024;
+  color: #fff;
+  padding: 0.5rem;
+}
+
+.content {
+  grid-area: content;
+  margin: 1rem;
+}
+
+/* * but currently the the footer is not coming at the end of the page , so for pushing the footer to the bottom of the page we need to force the content of our body to be the full height of the  page , so in the grid-container class specify the min-height as 100vh  */
+
+.footer {
+  grid-area: footer;
+  background-color: #069;
+  color: #fff;
+  text-align: center;
+  padding: 0.8rem;
+}
+
+/* * and also as we have specified the third row as 1fr in [grid-template-rows: auto auto 1fr auto;] , all the extra spaces will be put into the third row  */

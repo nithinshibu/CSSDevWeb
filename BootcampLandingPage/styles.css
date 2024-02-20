@@ -153,3 +153,23 @@ body {
   /* *So when we use the flex box, it will give some space between the image and the text  */
   margin-right: 1rem;
 }
+
+.section-accent {
+  background-color: #0af;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.free-title {
+  color: #fff;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+}
+
+.free-sub-title {
+  color: #fff;
+  /* *Max-width is set to 300px so that the text will be wrapped on to multiple lines instead of stretching across the entire screen. */
+  max-width: 300px;
+}

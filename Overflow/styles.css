@@ -1,5 +1,24 @@
 .parent {
+  /* * In this case, the content is overflowing */
   height: 100px;
   width: 100px;
   border: 1px solid #ff0000;
+  /* * By default the overflow is set to visible  */
+  /* overflow: visible; */
+  /* ----------------- */
+  /* * Now the content which is overflowing is hidden  */
+  /* * But in this case the content will be hidden entirely and we don't have a scroll bar */
+  /* overflow: hidden; */
+  /* ------------------- */
+  /* * If we want the scroll bar we need to set the overflow to scroll */
+  /* * But we can also notice that this will add a scroll bar on the bottom of the page also */
+  /* *This is because the overflow by default modifies the x-axis and y-axis. */
+  /* overflow: scroll; */
+  /* * If we want only the vertical scroll then we can use overflow-y */
+  /* overflow-y: scroll; */
+  /* ------------- */
+  /* * Overflow:auto will add a scroll bar if there is a need for one, so it doesn't require one, then it will not add a scroll bar  */
+  /* * In this example, by providing the overflow as auto, it will add a verticall scroll bar as it is required and it will not add a horizontal scroll bar as it is not required */
+  overflow: auto;
+  /* *Generally when we are using overflow  we can use either auto or hidden */
 }

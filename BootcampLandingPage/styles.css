@@ -97,6 +97,8 @@ body {
   text-decoration: none;
   border: none;
   cursor: pointer;
+  /* *Usually the button size will be by default small, so we need the button to inherit the font size of its parent */
+  font-size: inherit;
 }
 
 .btn:hover,
@@ -172,4 +174,58 @@ body {
   color: #fff;
   /* *Max-width is set to 300px so that the text will be wrapped on to multiple lines instead of stretching across the entire screen. */
   max-width: 300px;
+}
+
+.form {
+  /* * We need to set the max-width to 900px since otherwise the form will be as wide as the screen */
+  max-width: 900px;
+  /* *Now we need to center the form and to center it without using any flex box we can use this trick */
+  /* * We are setting the top and bottom to 0 and left and right to auto which means it will try to put the same amount of margin in the left and the right which eventually centers the item  */
+  margin: 0 auto;
+}
+
+.form label {
+  color: #000;
+  font-weight: bold;
+}
+
+.form input,
+.form textarea {
+  /* Start from here when starting the form related styling */
+  /* *When we make the input width as 100% , it will make everything to show on top to bottom */
+  width: 100%;
+  margin-top: 0.25rem;
+  margin-bottom: 0.75rem;
+  outline: none;
+  border: 1px solid #1b2522;
+  border-radius: 0.3em;
+  padding: 0.5em;
+  /* * We want it to inherit the same color as the parent */
+  color: inherit;
+  /* *inside the text area different font was coming so make that also inherit */
+  font-family: inherit;
+}
+
+.form textarea {
+  /* * Currently the text area is resizable which will break the layout so we need to restrict the layout to resize it vertically only */
+  resize: vertical;
+  /* *We need to set a min-height and max-height so that it wouldn't expand beyond a range */
+  min-height: 75px;
+  max-height: 200px;
+}
+
+.form input:focus,
+.form textarea:focus {
+  border-color: #0af;
+}
+
+/* * Now we to need to make the button a square shape and also for algining it at the right side in html we need to wrap the button inside a div */
+
+.btn-container {
+  /* * This will bring the button towards the right side of the form */
+  text-align: end;
+}
+
+.btn-square {
+  border-radius: 0.3em;
 }

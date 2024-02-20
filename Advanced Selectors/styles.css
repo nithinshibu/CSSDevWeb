@@ -1,0 +1,98 @@
+/* * If I add a background color to span like this */
+/* * The outer span and the inner span will get the same background color */
+/* * But what if I only what the background style to be applied only to the outer span */
+/* div span {
+  background-color: #069;
+} */
+
+/* * If we want to apply styles only to the direct descendents and not any other descendents */
+/* * This is really useful when we have a lot of multi level nesting and we need to apply styles only to the top level of the nesting */
+
+/* div > span {
+  background-color: #069;
+} */
+
+/* * Suppose we need to select all the <p> siblings of h2  */
+
+/* h2 ~ p {
+  background-color: #aaa;
+} */
+/* * The sibiling selector can select only those which comes after them */
+/* * In this case it will select all the <p> tags which comes after the div and apply the background color */
+/* div ~ p {
+  background-color: burlywood;
+} */
+
+/* * But what if we only what to apply the styles to the very next sibling, the first sibling <p> which comes after the div*/
+
+/* div + p {
+  background-color: blue;
+} */
+
+/* 
+span {
+  background-color: #0f0;
+} */
+
+/* * -------------------------------------------- */
+
+/* * NOT selector: This is going to select everything which doesn't have this certain selector  */
+
+/* * This will apply the bg color blue to all the paragraph without the class .green */
+
+/* p:not(.green) {
+  background-color: blue;
+} */
+
+/* * We can also combine them and use */
+p:not(.green):not(.red) {
+  background-color: aqua;
+}
+/* * This will apply this margin when we have a checkbox which is not checked */
+
+/* input:not(:checked) {
+  margin: 50px;
+} */
+
+/* * But there is a problem with this , if we have a text input, this same margin of 50px will be applied to that as well */
+
+/* * We can use the attribute selector */
+
+/* * This will apply styles to those input with type=text */
+
+/* input[type="text"] {
+  background-color: #444;
+  color: #fff;
+} */
+
+/* * What if if we want to apply styles to all those inputs which have an attribute called type */
+
+/* input[type] {
+  margin: 50px;
+} */
+
+/* * lets add a custom attribute to the html input:checkbox called data-margin */
+/* * This doesn't care whether we assign any value to data-margin in html or not */
+input[data-margin] {
+  margin: 50px;
+}
+/* *This will check for an input with attribute data-demo having a value which matches example, if it contains this keyword then this style will be applied to it */
+
+input[data-demo*="example"] {
+  background-color: #069;
+  color: #fff;
+}
+
+/* * Here in the above example , we are using '*' symbol telling that we are checking for this "example" to be contained in the value but if we don't provide the '*' symbol then it means that we need exactly it to be matched as "example" */
+
+/* In this case it will not work as we don't have a value exactly stored as example in html */
+input[data-demo="example"] {
+  background-color: red;
+  color: #fff;
+}
+
+/* * In this case we are telling that we need to apply styles to the input element with attribute data-demo which has a value starting with "demo" */
+input[data-demo^="demo"] {
+  background-color: green;
+  color: #fff;
+}

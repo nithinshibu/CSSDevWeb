@@ -1,0 +1,115 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  color: #1b2522;
+}
+
+.full-screen-header {
+  /* * Based on the design we know that it should take 100% height of the user screen  */
+  height: 100vh;
+  /* *The header image is way too big, we need scale down  */
+  /* *In order to do that we have a property called background size and set it to cover */
+  background-image: url("./img/header_image.jpg");
+  /* *So now the image is going to take as much as height or width it needs */
+  background-size: cover;
+  /* *Now we need to move the image so that the computer image will come down in the middle */
+  /* *This will move over the image as the center portion is 40% */
+  background-position-x: 40%;
+  /* * Setting up the y-axis will come in handy if we have a wide desktop screen*/
+  background-position-y: center;
+  /* *In order to layout the elements in the center, use display flex */
+  /* *This will make everything at the center of the screen */
+  display: flex;
+  /* * To make the .title and .sub-title, one coming after the other in newline, make the flex direction to column */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  /* * Inside the header we have an image of scroll-down-icon and we want it at the bottom-center of the header, so for that we are making the header as position relative , so that we can use position absolute later on the scroll down icon */
+  position: relative;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  /* * In this way by providing the align items at the center, the image and the nav links will be lined up in the center vertically */
+  align-items: center;
+  background-color: #1b2522;
+  padding: 0.5rem 1rem;
+}
+
+.nav-top {
+  /* * We want the navbar to be fixed at the top position */
+  position: fixed;
+  /* * To bring it to the top , set the top as 0 */
+  top: 0;
+  /* * We can also set the left to 0 and right to 0 so that it will make sure that it spans  100% of the width becuase the left hand side is 0 pixel away from the left and right hand side is 0 pixel away from the right */
+  left: 0;
+  right: 0;
+  /* * This will fill 100% of the screen */
+  /* -------------- */
+  /* * Also to make sure that this shows over top of everything, use z-index   */
+  /* * So z-index:1 means it will be higher than everything else that comes after it */
+  z-index: 1;
+}
+
+.logo {
+  /* * To reduce the size of the logo */
+  width: 50px;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+}
+
+.nav-list a {
+  text-decoration: none;
+  margin-left: 1rem;
+  color: #fff;
+}
+
+.nav-list a:hover {
+  color: #ccc;
+}
+
+.title {
+  font-size: 3rem;
+}
+
+.sub-title {
+  font-size: 1.5rem;
+  margin-top: 0.3rem;
+  margin-bottom: 1rem;
+}
+
+.btn {
+  background-color: #00aaff;
+  color: #fff;
+  /* * If we make the border-radius to a very large number, it will have pill shape */
+  border-radius: 10000px;
+  padding: 0.25em 1em;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: #0088cc;
+}
+
+.scroll-down-icon {
+  /* * We made the header as position:relative, so this scroll-down-icon will consider the header as it's parent container on applying position:absolute  */
+  position: absolute;
+  /* *So now we can see that the icon is 1rem below the bottom of the screen */
+  /* * As it is contained in the flex box model of the header , it is already at the center, so we were able to bring it at the bottom center */
+  bottom: 1rem;
+  /* *We need to reduce the icon size */
+  width: 30px;
+}

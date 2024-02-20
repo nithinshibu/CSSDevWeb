@@ -41,8 +41,8 @@ p {
   /* *CALC Function */
   /* * This calc function is useful, when we have to define a varibale without specifying any units */
   /* *Normally this will be invalid css, but using calc() function we can convert the numeric into a proper css value with units */
-  --spacer: 10;
-  margin: calc(var(--spacer) * 1px);
+  /* --spacer: 10;
+  margin: calc(var(--spacer) * 1px); */
   /* --------- */
   /* margin: calc(10px+2px); */
 }

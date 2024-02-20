@@ -113,3 +113,43 @@ body {
   /* *We need to reduce the icon size */
   width: 30px;
 }
+
+.section {
+  /* * This will space out the content from the edge of the screen */
+  padding: 2rem;
+}
+
+.section-title {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  text-align: center;
+  color: #000;
+}
+
+.curriculum-grid {
+  /* * Based on the design, we are going to use both grid and flex box */
+  /* * We will be splitting the content into two columns using grid  */
+  /* * And the elements inside will be aligned horizontally using flexbox */
+  /* ---------------------- */
+  display: grid;
+  /* * We have 2 columns,and we are going to use minmax(), so that the minimum we need it to be auto-sized to be the essential size as large as it needs to be */
+  /* * But at the maximum, we never want it to be more than 450px wide , so that it doesn't strecth too far on the screen */
+  grid-template-columns: repeat(2, minmax(auto, 450px));
+  /* *Now we need to make the content in the center */
+  justify-content: center;
+  row-gap: 10px;
+  column-gap: 50px;
+}
+
+.curriculum-grid-item {
+  display: flex;
+  /* *This will make sure that the text and the image will be always at the center */
+  align-items: center;
+}
+
+.curriculum-grid-item img {
+  /* * To reduce the image size */
+  width: 50px;
+  /* *So when we use the flex box, it will give some space between the image and the text  */
+  margin-right: 1rem;
+}

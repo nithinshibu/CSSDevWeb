@@ -1,0 +1,54 @@
+.box {
+  width: 50px;
+  height: 50px;
+  background-color: red;
+}
+
+/* * In the <p> tag, if we want to select the first letter and make it big , we can use a psuedo selector */
+
+p::first-letter {
+  font-size: 2rem;
+}
+
+p::first-line {
+  background-color: #ccc;
+}
+
+/* * Lets say we need to add some additional information to the page , so for the we can use the psuedo selector ::before and ::after  */
+
+/* * Before will come before all of the content inside the div and it will be the very first element in the div */
+/* .box::before {
+  content: "hi";
+}
+
+.box::after {
+  content: "bye";
+} */
+
+/* * Lets say that we need a green box inside the red box */
+/* * If we don't add the content inside it this green box will not be displayed normally, this is becuase for a pseudo element to show up on the page it needs to have some type of content  */
+.box::before {
+  /* *Without this empty string  content , the green box will not be shown */
+  content: "";
+  display: block;
+  width: 25px;
+  height: 25px;
+  background-color: #0f0;
+}
+/* .box::after { */
+/* *Without this empty string  content , the green box will not be shown */
+/* content: "";
+  display: block;
+  width: 25px;
+  height: 25px;
+  background-color: #069; */
+/* } */
+
+.box::after {
+  /* * This will read the value of the data-text attribute and uses that as the content.  */
+  content: attr(data-text);
+  display: block;
+  width: 25px;
+  height: 25px;
+  background-color: #069;
+}

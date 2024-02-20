@@ -1,0 +1,40 @@
+/* * In this example, we are using the red color in the h2's bg color and also paragraph's color */
+/* * So if we want to change the color and update it wherever required, it will be a task to do so */
+/* * Instead we can create a custom property in the root element (which is same as HTML element) and assign the same to other properties */
+/* * So that we only have to change this only one time and everywhere else it will be reflected */
+
+:root {
+  /* * We have created a variable with a value of red inside of it */
+  /* --primary-color: red; */
+  /* *Now we can see that once I change the color here, it is automatically reflected in the other elements which are using the variable */
+  --primary-color: #069;
+  /* --margin-zero: 0; */
+  --margin: 30px;
+}
+
+h2 {
+  /* background-color: #ff0000; */
+  /* * To use the variable we have created we need to use the var keyword in css */
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 0.5rem;
+
+  /* margin: var(--margin-zero); */
+
+  /* * Suppose we didn't provide a value for --margin-zero in css , then it will become an invalid css and nothing will happen to the page */
+  /* * in this case we can provide a default value while using the variable */
+  /* -------------- */
+  /* * So in this case it will check whether the margin-variable is present, if yes, then it will take that value from the variable (30px) else it will take the default value of 10px  */
+  margin: var(--margin, 10px);
+}
+
+p {
+  /* color: #f00; */
+  color: var(--primary-color);
+  /* margin: var(--margin-zero); */
+  /* --------------------- */
+  /* *So in this case, we are overriding the margin variable with 20px and this is possible becuase the selector is having the same specificity as the root element*/
+  /* * And the p is coming at the bottom than the root element , it is overriding the styles*/
+  --margin: 20px;
+  margin: var(--margin);
+}

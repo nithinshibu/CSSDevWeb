@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h2>Heading</h2>
+    <p>Paragraph 1</p>
+    <p>Paragraph 2</p>
+    <button>Click Me</button>
+  </body>
+  <script>
+    // We are work with custom properties inside of javascript
+    const button = document
+      .querySelector("button")
+      .addEventListener("click", () => {
+        //  This will log the color inside the custom property , meaning it will log #69 as the output which is stored in the custom css variable --primary-color.
+        console.log(
+          getComputedStyle(document.documentElement).getPropertyValue(
+            "--primary-color"
+          )
+        );
+        //We can also set value to css custom variable
+        document.documentElement.style.setProperty("--primary-color", "red");
+      });
+  </script>
+</html>

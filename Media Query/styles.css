@@ -1,0 +1,56 @@
+div {
+  font-weight: bold;
+  font-size: 400%;
+  color: green;
+}
+
+/* * Using the print keyword we will can edit the styles when the user clicks on print button on the browser */
+
+@media print {
+  div {
+    color: blue;
+  }
+}
+
+/* * By using the screen keyword, we can see that the text color in the browser changes to brown */
+@media screen {
+  div {
+    color: brown;
+  }
+}
+
+/* *If we want some styles in both print and screen then we need to use all keyword */
+/* @media all {
+  div {
+    color: teal;
+  }
+} */
+
+/* *This means on all types of media , when the max-width is 700px and below the color will be teal and above 700px the color will be default color in this case brown. */
+/* @media all and (max-width: 700px) {
+  div {
+    color: teal;
+  }
+} */
+
+/* *When the screen is in landscape mode it will show the teal color and when it is in portrait mode it will show the brown color */
+@media (orientation: landscape) {
+  div {
+    color: teal;
+  }
+}
+
+/* *So when the width is between 800px and 100px the color will be red */
+@media (min-width: 800px) and (max-width: 1000px) {
+  div {
+    color: red;
+  }
+}
+
+/* *In this case we don't have OR , instead to apply styles for one or the other we need to use comma ','  */
+
+@media (min-width: 800px), (orientation: landscape) {
+  div {
+    color: greenyellow;
+  }
+}

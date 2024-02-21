@@ -1,0 +1,78 @@
+/* * By default to style the input checkbox is not an easy task in css */
+/* *So we are going to build a checkbox of our own completely from scratch */
+/* --------------------- */
+/* *We need to specify the box-sizing specifically for pseudo elements before and after as it will not be automatically selected on using the "*" */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.custom-checkbox {
+  /* * Now we need to remove the existing checkbox */
+  /* * If we use display:none, then there is an issue with this approach */
+  /* * If we use it we will be no longer able to tab through the checkboxes  */
+  /* ----------------------- */
+  /*  * So we need to use the opacity property , in this case the checkbox will be there but it will not be visible */
+  opacity: 0;
+  position: absolute;
+  /* *We are using a very large number so that the checkbox willbe pushed way off the screen so that we no longer accidently click on them */
+  left: -99999px;
+}
+
+/* .custom-checkbox:hover + label {
+  color: red;
+} */
+
+.custom-checkbox + label {
+  display: flex;
+  /* So that the text will be always in the center of the checkbox */
+  align-items: center;
+  /* font-size: 30px; */
+  /* *To make the checkbox more clickable , change the cursor to pointer */
+  cursor: pointer;
+}
+
+/* *We are going to create the custom checkbox in the pseudo element (before) */
+.custom-checkbox + label::before {
+  /* *By default it is not going to have any content */
+  content: "";
+  width: 1.1em;
+  height: 1.1em;
+  /* background-color: red; */
+  /* display: block; */
+  border: 0.05em solid #000;
+  /* *We are using em becuase we want this to scale */
+  /* *So if I change the fontsize in .custom-checkbox + label , then we can see that the font size of the checkbox will be scaled accordingly. */
+  border-radius: 0.15em;
+  margin-right: 0.5em;
+}
+
+/* *Remember our custom checkbox itself is the "::before" */
+.custom-checkbox + label:hover::before {
+  background-color: #0af;
+}
+
+.custom-checkbox:focus + label::before {
+  box-shadow: 0 0 10px 0 #000;
+}
+
+/* https://www.toptal.com/designers/htmlarrows/symbols/heavy-check-mark/ */
+/* *Copy the CSS code for the checkmark and paste it in the content */
+.custom-checkbox:checked + label::before {
+  content: "\2714";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #069;
+  color: #fff;
+}
+
+.custom-checkbox:disabled + label {
+  color: #aaa;
+  cursor: not-allowed;
+}
+.custom-checkbox:disabled + label::before {
+  background-color: #ccc;
+  border-color: #999;
+}

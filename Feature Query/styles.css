@@ -1,0 +1,44 @@
+div {
+  background-color: green;
+}
+
+/* @supports (background-color: revert) {
+  .div {
+    background-color: revert;
+  }
+}
+
+@supports not (background-color: revert) {
+  .div {
+    background-color: transparent;
+  }
+} */
+
+/* *if there is browser support for this property then apply this style */
+/* @supports (background-color: revert) {
+  .div {
+    background-color: red;
+  }
+} */
+
+/* *if there no is browser support for this property then apply this style */
+
+/* @supports not (background-color: revert) {
+  .div {
+    background-color: blue;
+  }
+} */
+
+/* * We use OR with this */
+@supports (background-color: revert) or (background-color: red;) {
+  .div {
+    background-color: blue;
+  }
+}
+
+/* * We use AND with this */
+@supports (background-color: revert) and (background-color: red;) {
+  .div {
+    background-color: blue;
+  }
+}

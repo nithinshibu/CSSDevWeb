@@ -1,0 +1,60 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin-top: 100px;
+}
+
+/* *Select every element with the data-tooltip */
+[data-tooltip] {
+  /* *We are setting this as relative so that when we style the tooltip we can set it as position absolute */
+  position: relative;
+}
+
+/* *This is our actual tooltip */
+
+[data-tooltip]:hover::before {
+  /* *Now the tooltip is showing but it is showing before the content, we want it to be shown above the content */
+  content: attr(data-tooltip);
+  /* *So position it as absolute */
+  position: absolute;
+  /* *To make it show above the content of span */
+  /* top: -1rem; */
+  /* * Centering the tooltip is not an easy task */
+  /* * We need to use both left and transform together to bring it in the center */
+  left: 50%;
+  /* transform: translate(-50%); */
+  /* *Also instead of using top:-1rem, we can use the -1rem on the translate y-direction  */
+  /* transform: translate(-50%, -1rem); */
+  /* *This will make sure the tooltip is always above the span content including its border */
+  /* transform: translate(-50%, -100%); */
+  transform: translate(-50%, calc(-100% - 0.5rem));
+  background-color: #333;
+  color: #fff;
+  padding: 0.5em;
+  border-radius: 0.3em;
+  /* *But now we can see that the tooltip is wrapping the content */
+  /* *Now it will set the width maximum size it needs to be to fit the content inside of it */
+  width: max-content;
+  /* *Suppose it the tooltip is having a larger text then this will prevent the tooltip from span too far  */
+  max-width: 100%;
+  text-align: center;
+}
+
+/* *Arrow indicater */
+[data-tooltip]:hover::after {
+  content: "";
+  position: absolute;
+  border: 0.5rem solid transparent;
+  border-top-color: #333;
+  transform: translate(-50%, -0.5rem);
+  /* * To make the arrow at dead center */
+  left: 50%;
+
+  /* border-bottom-color: green;
+  border-left-color: orange;
+  border-right-color: blue; */
+}

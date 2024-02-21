@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        height: 200px;
+        width: 69%;
+        border: 1px solid red;
+        display: flex;
+        /* *This will align the items to the flex-end  */
+        /* align-items: flex-end; */
+        /* While  using align-content use flex-wrap:wrap */
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        /* *Now the content will be aligned to the end */
+        align-content: flex-end;
+      }
+
+      .child {
+        border: 1px solid teal;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="child">home</div>
+      <div class="child">about</div>
+      <div class="child">service</div>
+      <div class="child">contact</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,95 @@
+div {
+  background-color: #f00;
+  height: 100px;
+  width: 100px;
+  color: #fff;
+  /* animation: color-change 1s linear 0.5s forwards alternate infinite; */
+  /* *In this case we are applying two animations on the div */
+  /* animation: color-change 1s linear 0.5s forwards alternate infinite,
+    size-change 1s linear 0.5s forwards alternate infinite; */
+  /* * But we can simplify the syntax for two animations */
+  /* animation-name: color-change, size-change;
+  animation-delay: 0.5s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
+  animation-timing-function: linear; */
+  animation-name: custom;
+  animation-delay: 0.5s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+}
+
+div:hover {
+  /* * animation: <animation-name-of-our-choice> <duration> <timing-function> <delay> */
+  /* * We are adding the forward keyword because we want the animation to stay in effect even after the intial animation is completed */
+  /* * In this example on hovering once the animation is over, it goes back to the red color even if we are still hovering, but once we add the forwards keyword, the animation will remain (green color) on hovering and also forwards use the 100% defined in the animation */
+  /* animation: color-change 1s linear 0.5s forwards; */
+  /* ----------------------------- */
+  /* * In this case, for the 0.5s of delay before the animation starts, it will take the bg color #069 from the 0% of the animation   */
+  /* animation: color-change 1s linear 0.5s backwards; */
+  /* ----------------------------- */
+  /* *This will take both the 0% and 100% animation */
+  /* animation: color-change 1s linear 0.5s both; */
+  /* ----------------------------------------- */
+  /* * Here the 2 is the number of times the animation should execute (animation iteration) */
+  /* animation: color-change 1s linear 0.5s forwards 2; */
+  /* *alternate will be like 0% -> 100% then 100% -> 0% then 0% -> 100% */
+  /* * alternate will come into only when we have a iteration count which is greater than 1 */
+  /* animation: color-change 1s linear 0.5s forwards 2 alternate; */
+  /* * Infinite will be like the animation will never stop */
+  /* animation: color-change 1s linear 0.5s forwards infinite; */
+  /* animation: color-change 1s linear 0.5s forwards alternate infinite; */
+  animation-play-state: paused;
+}
+
+/* *animation on its own doesn't do anything until we define the animation using @keyframes */
+/* *In the keyframes , pass the animation name which we gave. */
+/* *In the keyframe we can specify any percentage of the animation, 0% to 100%  */
+@keyframes color-change {
+  /* *We want to transform from 0% to 100% and everything which we decide in them specifies that how the animation should look in 0% and 100% */
+  0% {
+    /* *If we are not specifying anything here it takes the default values which we defined above  in the div*/
+    background-color: #069;
+  }
+
+  100% {
+    background-color: green;
+    color: #000;
+  }
+}
+
+@keyframes size-change {
+  /* *instead of specifying 0% {} and 100% {} ,we can use from {} which is same as 0% and to {} which is same as 100% */
+  /* from{
+
+  } */
+  to {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@keyframes custom {
+  from {
+    font-size: 1rem;
+  }
+
+  25% {
+    font-size: 2rem;
+  }
+
+  50% {
+    font-size: 2.5rem;
+  }
+
+  75% {
+    font-size: 1.5rem;
+  }
+
+  to {
+    font-size: 1rem;
+  }
+}

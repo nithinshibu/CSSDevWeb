@@ -1,0 +1,43 @@
+div {
+  background-color: #f00;
+  height: 100px;
+  width: 100px;
+  color: #fff;
+  /* *This will set a transition effect on changing the background color for 1 second */
+  /* transition: 1s; */
+  /* transition-duration: 1s; */
+  /* *In this example the bg color will be changed quickly but the text color has a transition of 1 second */
+  /* transition: color 1s; */
+  /* * All is the default behavior */
+  /* transition: all 1s; */
+  /* * We can also specify how we want the animation to take place */
+  /* The default one is linear --> transition: color 1s linear */
+  /* *In this the transition will be little slower in the beginning and it will speed up in the end */
+  /* transition: all 1s ease-in; */
+  /* *In this the transition will be little faster in the beginning and it will slow down in the end */
+  /* transition: all 1s ease-out; */
+  /* --------------- */
+  /* *ease-in-out means slower at the beginning and the end and quicker in the middle  */
+  /* transition: all 1s ease-out; */
+  /* *We can get this cubic bezier with inspecting the Div tag in browser */
+  /* transition: all 1s cubic-bezier(0, 0, 0.9, 0.57); */
+  /* -------------------- */
+  /* * We can also apply a delay for how long we have to wait for the transition to start */
+  /* I have added a delay of 0.5s */
+  transition: all 1s linear 0.5s;
+  /* *Also of these properties can be added individually also */
+  /* transition-delay: 0.5s;
+  transition-timing-function: linear;
+  transition-duration: 1s;
+  transition-property: all; */
+  /* *Suppose if we want the color and background color to have different transition properties then we can also do that by specifying commas */
+  transition: color 1s, background-color 2s;
+  /* * We can also write them individually */
+  /* transition-property: color, background-color;
+  transition-duration: 1s; */
+}
+
+div:hover {
+  background-color: green;
+  color: #000;
+}
